@@ -8,8 +8,8 @@ sshagent([tomcat-dev]){
 }
 */
 
-def call(tomcatIp, tomcat-dev) {
-    sshagent([tomcat-dev]) {
+def call(tomcatIp, tomcatdev) {
+    sshagent([tomcatdev]) {
         sh """
         scp -o StrictHostKeyChecking=no target/online-banking.war ec2-user@${tomcatIp}:/opt/tomcat11/webapps/
         ls -lrt
