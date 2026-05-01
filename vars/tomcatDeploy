@@ -1,0 +1,10 @@
+
+def call(tomcatIp,tomcatdevcreds){
+sshagent(['tomcatdevcreds']) {
+                 sh """
+                     scp -o StrictHostKeyChecking=no target/oniline-banking.war ec2-user@${tomcatIp}:/opt/tomcat11/webapps/
+                     ssh -o StrictHostKeyChecking=no ec2-user@${tomcatIp} "/opt/tomcat11/bin/shutdown.sh"
+                     ssh -o StrictHostKeyChecking=no ec2-user@${tomcatIp} "/opt/tomcat11/bin/startup.sh"
+                  """
+                }
+}
