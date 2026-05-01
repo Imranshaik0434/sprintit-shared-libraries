@@ -4,5 +4,9 @@ def add(i,j){
 }
 def multiplication(i,j){
   result = i*j
-  echo "Sum of ${i} and ${j} is ${result}"
+  echo "Multiplicaiton of ${i} and ${j} is ${result}"
+}
+def sub(i,j){
+  result = i-j
+  echo "Substraction of  of ${i} and ${j} is ${result}"
 }
